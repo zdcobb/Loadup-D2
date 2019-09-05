@@ -1,7 +1,6 @@
 let React = require('react');
 let UserSearch = require('./FindUser');
 
-
 class App extends React.Component {
     render() {
         return(

@@ -1,14 +1,12 @@
-let apiKey = require('../Assets/Private/ApiKey');
-
-let apiURL = "https://www.bungie.net/Platform";
+let api = require('../../.keys');
 
 let myHeaders = new Headers({
-    "X-API-Key": apiKey
+    "X-API-Key": api.API_Key
     // "User-agent": "Loadup/1.0 AppId/appIdNum (+webUrl;contactEmail)"
 });
 
 async function genericGet(path) {
-    let call = await fetch(apiURL + path, {
+    let call = await fetch(api.APU_URL + path, {
         method: 'GET',
         headers: myHeaders
     });
@@ -29,5 +27,4 @@ module.exports = {
     get: genericGet,
     getManifest: getManifest,
     findUser: findMatchingUsers
-
 }
